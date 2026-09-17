@@ -9,4 +9,5 @@ vite.config.d.ts
 *.log
 .preview*
 .sites-runtime
+.vite
 .deployment

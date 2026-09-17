@@ -11,6 +11,10 @@ npm install
 npm run dev
 ```
 
+Run these commands from the repository root. Installation uses the frontend's lockfile;
+the root scripts forward app commands to `frontend/`. You can also work directly in
+`frontend/` with `npm ci` and `npm run dev`.
+
 ```sh
 npm run build    # Type-check and build into dist/
 npm run preview  # Serve the production build locally
@@ -21,14 +25,30 @@ npm test
 ## Structure
 
 ```text
-src/
-  app/router.tsx          Central app router with lazy-loaded secondary pages
-  components/            Shared layout, room cards, booking search, motion wrapper
-  data/hotel.ts          Typed room catalogue, rates, and photography
-  lib/booking.ts         Date validation, query parsing, and stay calculations
-  pages/                 Home, rooms, room detail, experiences, story, booking, 404
-  styles.css             Design tokens, shared styles, and responsive layouts
+.openai/hosting.json       Existing Sites identity and deployment output setting
+package.json               Convenience commands for the frontend
+README.md                  Project documentation
+frontend/
+  package.json             App dependencies and scripts
+  package-lock.json        Locked frontend dependencies
+  index.html               Vite entry page
+  public/                  Static assets
+  vite.config.ts           Vite config; builds to ../dist
+  tsconfig*.json           TypeScript configuration
+  eslint.config.js         Frontend lint rules
+  src/
+    app/router.tsx         Central app router with lazy-loaded secondary pages
+    components/            Shared layout, room cards, booking search, motion wrapper
+    data/hotel.ts          Typed room catalogue, rates, and photography
+    lib/booking.ts         Date validation, query parsing, and stay calculations
+    pages/                 Home, rooms, room detail, experiences, story, booking, 404
+    styles.css             Design tokens, shared styles, and responsive layouts
+dist/                      Generated production build (ignored by Git)
 ```
+
+Frontend code and tooling live in `frontend/`. Repository metadata and hosting settings
+stay at the root. Both root and frontend build commands write to the root `dist/`,
+matching `.openai/hosting.json`; the frontend preview command serves that same output.
 
 Routes: `/`, `/rooms`, `/rooms/:slug`, `/experiences`, `/our-story`, `/booking`.
 This is a Vite SPA using React Router's `createBrowserRouter`, not Next.js's file-based App Router. Configure your production static host to rewrite unmatched application URLs to `/index.html` so direct links and refreshes work.
