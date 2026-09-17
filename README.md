@@ -16,7 +16,7 @@ the root scripts forward app commands to `frontend/`. You can also work directly
 `frontend/` with `npm ci` and `npm run dev`.
 
 ```sh
-npm run build    # Type-check and build into dist/
+npm run build    # Type-check; build frontend/dist and copy it to dist for Sites
 npm run preview  # Serve the production build locally
 npm run lint
 npm test
@@ -33,7 +33,8 @@ frontend/
   package-lock.json        Locked frontend dependencies
   index.html               Vite entry page
   public/                  Static assets
-  vite.config.ts           Vite config; builds to ../dist
+  vite.config.ts           Vite config; builds to frontend/dist
+  vercel.json              Vercel config when its Root Directory is frontend
   tsconfig*.json           TypeScript configuration
   eslint.config.js         Frontend lint rules
   src/
@@ -43,12 +44,18 @@ frontend/
     lib/booking.ts         Date validation, query parsing, and stay calculations
     pages/                 Home, rooms, room detail, experiences, story, booking, 404
     styles.css             Design tokens, shared styles, and responsive layouts
-dist/                      Generated production build (ignored by Git)
+dist/                      Sites build copy (ignored by Git)
+vercel.json                Vercel config when its Root Directory is the repo root
 ```
 
-Frontend code and tooling live in `frontend/`. Repository metadata and hosting settings
-stay at the root. Both root and frontend build commands write to the root `dist/`,
-matching `.openai/hosting.json`; the frontend preview command serves that same output.
+Frontend code and tooling live in `frontend/`. Repository metadata and Sites hosting
+settings stay at the root. Vite builds into `frontend/dist/`, which Vercel serves.
+The root build command also copies that output into `dist/` for Sites hosting.
+
+For Vercel, set **Root Directory** to `frontend` and use its default Vite build settings.
+The `frontend/vercel.json` file sets the output directory and supports direct links
+to rooms and other routes. If the Vercel project instead uses the repository root,
+the root `vercel.json` runs the root build command and serves `frontend/dist/`.
 
 Routes: `/`, `/rooms`, `/rooms/:slug`, `/experiences`, `/our-story`, `/booking`.
 This is a Vite SPA using React Router's `createBrowserRouter`, not Next.js's file-based App Router. Configure your production static host to rewrite unmatched application URLs to `/index.html` so direct links and refreshes work.
