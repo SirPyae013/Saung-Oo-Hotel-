@@ -1,0 +1,28 @@
+import { describe, expect, it } from 'vitest'
+import { addDays, nightsBetween, stayFromParams, stayQuery, validateStay } from './booking'
+
+describe('stay validation and totals', () => {
+  const stay = { checkIn: '2026-09-20', checkOut: '2026-09-22', guests: 2 }
+  it('accepts a valid stay', () => expect(validateStay(stay, '2026-09-16')).toBeNull())
+  it('rejects past, reversed and impossible dates', () => {
+    expect(validateStay(stay, '2026-09-21')).toMatch(/past/)
+    expect(validateStay({ ...stay, checkOut: stay.checkIn }, '2026-09-16')).toMatch(/after/)
+    expect(validateStay({ ...stay, checkIn: '2026-02-30' }, '2026-01-01')).toMatch(/valid/)
+  })
+  it('rejects malformed URLs and invalid guest counts', () => {
+    expect(validateStay(stayFromParams(new URLSearchParams('checkIn=nope&guests=NaN')))).toMatch(
+      /valid/,
+    )
+    for (const guests of [0, 5, 1.5, NaN])
+      expect(validateStay({ ...stay, guests }, '2026-09-16')).toMatch(/guests/)
+  })
+  it('limits stays to 30 nights', () =>
+    expect(validateStay({ ...stay, checkOut: '2026-10-25' }, '2026-09-16')).toMatch(/30/))
+  it('calculates nights over month boundaries independently of DST', () => {
+    expect(nightsBetween('2026-03-07', '2026-03-10')).toBe(3)
+    expect(addDays('2026-12-31', 2)).toBe('2027-01-02')
+    expect(nightsBetween(stay.checkIn, stay.checkOut) * 180000).toBe(360000)
+  })
+  it('round-trips dates and guests through room navigation', () =>
+    expect(stayFromParams(new URLSearchParams(stayQuery(stay, 'deluxe-retreat')))).toEqual(stay))
+})
