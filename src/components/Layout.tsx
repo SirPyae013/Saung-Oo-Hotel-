@@ -140,7 +140,6 @@ export function Layout() {
         </div>
         <div className="footer-bottom container">
           <span>© {new Date().getFullYear()} Saung Oo Hotel</span>
-          <span>A fictional hotel concept · Frontend preview</span>
           <span>Made for unhurried moments.</span>
         </div>
       </footer>
