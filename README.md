@@ -60,6 +60,25 @@ the root `vercel.json` runs the root build command and serves `frontend/dist/`.
 Routes: `/`, `/rooms`, `/rooms/:slug`, `/experiences`, `/our-story`, `/booking`.
 This is a Vite SPA using React Router's `createBrowserRouter`, not Next.js's file-based App Router. Configure your production static host to rewrite unmatched application URLs to `/index.html` so direct links and refreshes work.
 
+## Netlify deployment
+
+For Git-connected deployments, the root `netlify.toml` sets the base directory to
+`frontend`, the build command to `npm run build`, and the publish directory to
+`dist` (relative to that base). Commit these files and trigger a new deploy.
+The `_redirects` file in `frontend/public` is copied into the build and allows
+direct links and refreshes on application routes while preserving static assets.
+
+For a manual drag-and-drop deploy, run `npm run build` from the repository root,
+then upload the generated root `dist` folder. It contains `index.html`, `assets/`,
+`favicon.svg`, and `_redirects`. Do not upload the source `frontend` folder:
+its HTML references `/src/main.tsx`, which requires Vite compilation and cannot
+run directly as a browser JavaScript module.
+
+If a deployed page reports a module MIME type of `application/octet-stream`,
+check that the deployed HTML references `/assets/*.js`, not `/src/main.tsx`.
+The favicon should be available at `/favicon.svg`. Redeploy the complete build
+rather than changing MIME headers to disguise uncompiled TypeScript as JavaScript.
+
 ## Booking flow
 
 Choose dates and guests → browse matching room capacities → room details → guest details → review → demo confirmation. Dates and guest count are carried in URL parameters. Dates, stay length (up to 30 nights), guest count, room capacity, and required guest fields are validated. Dates use calendar-day arithmetic to avoid daylight-saving time errors. Rates are sample MMK amounts; breakfast and demo taxes/fees are included.
