@@ -37,6 +37,7 @@ export default function BookingPage() {
     promotion: '',
     children: 0,
     extraBed: false,
+    acceptedTerms: false,
   })
   const [error, setError] = useState<string | null>(null)
   const [reference, setReference] = useState('')
@@ -62,6 +63,9 @@ export default function BookingPage() {
     : !validNrc(nrc) || !townships.some((township) => township.code === guest.nrcTownship)
       ? 'Complete the NRC in English, including the six-digit serial number.'
       : null
+  const termsIssue = guest.acceptedTerms
+    ? null
+    : 'Please accept the terms and conditions to continue.'
   const issue =
     validateStay(stay) ??
     (stay.guests > room.guests || guest.children > maxChildren
@@ -162,8 +166,8 @@ export default function BookingPage() {
             <form
               onSubmit={(event) => {
                 event.preventDefault()
-                setError(issue ?? identityIssue)
-                if (!issue && !identityIssue) moveTo('review')
+                setError(issue ?? identityIssue ?? termsIssue)
+                if (!issue && !identityIssue && !termsIssue) moveTo('review')
               }}
             >
               <h2>The details of your escape.</h2>
@@ -313,7 +317,6 @@ export default function BookingPage() {
                     onChange={(event) => setGuest({ ...guest, phone: event.target.value })}
                     placeholder="+959123456789"
                   />
-               
                 </label>
                 <fieldset className="full-width nrc-fields">
                   <legend>Myanmar NRC (required)</legend>
@@ -388,7 +391,7 @@ export default function BookingPage() {
                       />
                     </label>
                   </div>
-               
+
                   <p aria-live="polite">
                     NRC: {guest.nrcRegion || '…'}/{guest.nrcTownship || '…'}({guest.nrcType || '…'})
                     {guest.nrcSerial || '…'}
@@ -402,9 +405,6 @@ export default function BookingPage() {
                     onChange={(event) => setGuest({ ...guest, promotion: event.target.value })}
                     placeholder="Enter your promotion code"
                   />
-                  <span className="optional">
-                    Codes are subject to verification. No discount is applied in this demo.
-                  </span>
                 </label>
                 <label className="full-width">
                   Special request <span className="optional">(optional)</span>
@@ -422,9 +422,17 @@ export default function BookingPage() {
                   {error}
                 </p>
               )}
-              <p className="privacy-note">
-                <ShieldCheck size={17} /> Your details stay in this page and are cleared on refresh.
-              </p>
+              <label className="terms-acceptance">
+                <input
+                  type="checkbox"
+                  name="acceptedTerms"
+                  required
+                  checked={guest.acceptedTerms}
+                  onChange={(event) => setGuest({ ...guest, acceptedTerms: event.target.checked })}
+                />
+                <span>I accept the terms and conditions.</span>
+              </label>
+          
               <button className="button button-dark" type="submit">
                 Review your stay <ArrowUpRight size={18} />
               </button>
@@ -433,6 +441,10 @@ export default function BookingPage() {
             <div className="review-details">
               <h2>Everything looking lovely?</h2>
               <dl>
+                <div>
+                  <dt>Terms and conditions</dt>
+                  <dd>{guest.acceptedTerms ? 'Accepted' : 'Not accepted'}</dd>
+                </div>
                 <div>
                   <dt>Guest</dt>
                   <dd>{guest.fullName}</dd>
@@ -501,11 +513,7 @@ export default function BookingPage() {
                 )}
               </dl>
               <div className="demo-callout">
-                <ShieldCheck size={22} />
-                <p>
-                  This is a demo reservation. No payment or real booking will be made. Your details
-                  will not be sent to a hotel.
-                </p>
+              
               </div>
               <div className="review-actions">
                 <button className="button button-outline" onClick={() => moveTo('details')}>
@@ -514,8 +522,8 @@ export default function BookingPage() {
                 <button
                   className="button button-dark"
                   onClick={() => {
-                    if (issue || identityIssue) {
-                      setError(issue ?? identityIssue)
+                    if (issue || identityIssue || termsIssue) {
+                      setError(issue ?? identityIssue ?? termsIssue)
                       moveTo('details')
                       return
                     }
@@ -592,11 +600,6 @@ export default function BookingPage() {
                 {issue}
               </p>
             )}
-            <p className="demo-note">
-              Sample pricing for this preview.
-              <br />
-              No payment required.
-            </p>
           </div>
         </aside>
       </div>

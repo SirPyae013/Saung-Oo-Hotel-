@@ -1290,6 +1290,24 @@ hr {
   color: var(--muted);
   display: contents;
 }
+.terms-acceptance {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 26px;
+  padding-block: 10px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  cursor: pointer;
+}
+.terms-acceptance input {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin: 3px 0 0;
+  accent-color: var(--green);
+  cursor: pointer;
+}
 .privacy-note {
   display: flex;
   gap: 10px;
