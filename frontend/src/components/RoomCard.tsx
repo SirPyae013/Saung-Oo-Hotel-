@@ -34,7 +34,7 @@ export function RoomCard({ room, stay }: { room: Room; stay?: Stay }) {
           </span>
           <span>
             <Users size={15} />
-            {room.guests} guests
+            {room.guests} adults + 1 child
           </span>
         </div>
         <div className="room-card-bottom">

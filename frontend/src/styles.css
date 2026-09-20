@@ -141,13 +141,35 @@ main:focus {
 .text-link:hover svg {
   transform: translate(2px, -2px);
 }
-.button-dark {
-  background: var(--green);
+.button-dark,
+.site-header:not(.over-hero) .header-book,
+.filter-pills button.selected {
+  background: linear-gradient(155deg, #487969e6 0%, #245648eb 45%, #173f36f2 100%);
+  border: 1px solid #91baa78c;
   color: #fff;
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+  backdrop-filter: blur(16px) saturate(135%);
+  box-shadow:
+    inset 0 1px 0 #ffffff59,
+    inset 0 -1px 0 #0c2d2859,
+    0 7px 18px #173f3629;
 }
-.button-dark:hover {
-  background: #245649;
-  box-shadow: 0 6px 20px #173f3618;
+.button-dark:hover,
+.site-header:not(.over-hero) .header-book:hover,
+.filter-pills button.selected:hover {
+  background: linear-gradient(155deg, #548675eb, #2c6353f0 45%, #1d493ef5);
+  box-shadow:
+    inset 0 1px 0 #ffffff70,
+    inset 0 -1px 0 #0c2d2859,
+    0 10px 24px #173f3638;
+}
+.button-dark:active,
+.site-header:not(.over-hero) .header-book:active,
+.filter-pills button.selected:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 2px 5px #0c2d2833,
+    0 3px 10px #173f3626;
 }
 .button-light {
   background: #fcfbf5;
@@ -241,11 +263,21 @@ main:focus {
   padding: 16px 30px;
   border-radius: 100px;
   background: #ffffff4a;
+  box-shadow:
+    inset 0 1px 0 #ffffffeb,
+    inset 0 -1px 0 #173f3612,
+    0 8px 20px #173f361c,
+    0 2px 4px #173f3612;
 }
 .over-hero .desktop-nav {
   background: #ffffff10;
   border-color: #ffffff30;
   backdrop-filter: blur(18px);
+  box-shadow:
+    inset 0 1px 0 #ffffff40,
+    inset 0 -1px 0 #09271e33,
+    0 10px 28px #071f1a40,
+    0 2px 6px #071f1a26;
 }
 .desktop-nav a {
   font-size: 0.76rem;
@@ -257,20 +289,9 @@ main:focus {
 .over-hero .desktop-nav a {
   color: #ffffffe0;
 }
-.desktop-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -7px;
-  left: 50%;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: currentColor;
-  opacity: 0;
-  transition: opacity 0.25s;
-}
-.desktop-nav a.active::after {
-  opacity: 1;
+.desktop-nav a.active,
+.mobile-nav a.active {
+  font-weight: 700;
 }
 .desktop-nav a.active,
 .desktop-nav a:hover {
@@ -887,9 +908,7 @@ main:focus {
     color 0.25s;
 }
 .filter-pills button.selected {
-  background: var(--green);
   color: white;
-  border-color: var(--green);
 }
 .filter-pills button:hover:not(.selected) {
   background: #e9eee2;
@@ -1220,6 +1239,51 @@ hr {
 }
 .full-width {
   grid-column: 1/-1;
+}
+.nrc-fields {
+  min-width: 0;
+  margin: 0;
+  padding: 20px;
+  border: 1px solid #d9dfd4;
+  border-radius: 6px;
+}
+.nrc-fields legend {
+  padding: 0 8px;
+  font-size: 0.9rem;
+}
+.nrc-fields p {
+  overflow-wrap: anywhere;
+  font-size: 0.875rem;
+  margin: 16px 0 0;
+}
+.nrc-row {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) 4rem 6rem;
+  gap: 10px;
+  align-items: end;
+}
+.nrc-fields .nrc-row > label {
+  min-width: 0;
+  grid-column: auto;
+  font-size: 0.875rem;
+}
+.nrc-fields .nrc-row input,
+.nrc-fields .nrc-row select {
+  padding: 13px 6px;
+  font-size: 0.875rem;
+}
+@media (max-width: 600px) {
+  .nrc-fields {
+    padding: 16px 8px;
+  }
+  .nrc-row {
+    grid-template-columns: 2.75rem minmax(0, 1fr) 3.25rem 4.75rem;
+    gap: 5px;
+  }
+  .nrc-fields .nrc-row input,
+  .nrc-fields .nrc-row select {
+    padding: 12px 2px;
+  }
 }
 .optional {
   font-weight: 400;
@@ -1740,7 +1804,10 @@ hr {
     backdrop-filter: blur(25px);
     border: 1px solid #ffffffe0;
     border-radius: 13px;
-    box-shadow: 0 15px 30px #0002;
+    box-shadow:
+      inset 0 1px 0 #ffffff,
+      0 18px 38px #173f362e,
+      0 4px 10px #173f361a;
   }
   .mobile-nav a {
     padding: 17px 24px;

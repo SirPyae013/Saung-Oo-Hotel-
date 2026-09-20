@@ -2,8 +2,13 @@ import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { ArrowLeft, ArrowUpRight, Check, CheckCircle2, ShieldCheck } from 'lucide-react'
 import { formatPrice, rooms } from '../data/hotel'
+import townshipData from '../data/nrc-townships.json'
 import {
   addDays,
+  childRate,
+  childCapacity,
+  validPhone,
+  validNrc,
   dateString,
   displayDate,
   nightsBetween,
@@ -18,7 +23,21 @@ export default function BookingPage() {
   const room = rooms.find((item) => item.id === params.get('room'))
   const [stay, setStay] = useState(() => stayFromParams(params))
   const [step, setStep] = useState<'details' | 'review' | 'complete'>('details')
-  const [guest, setGuest] = useState({ firstName: '', lastName: '', email: '', requests: '' })
+  const [guest, setGuest] = useState({
+    fullName: '',
+    email: '',
+    phone: '+95',
+    nrcRegion: '',
+    nrcTownship: '',
+    nrcType: '',
+    nrcSerial: '',
+    requests: '',
+    residency: 'local',
+    arrival: '',
+    promotion: '',
+    children: 0,
+    extraBed: false,
+  })
   const [error, setError] = useState<string | null>(null)
   const [reference, setReference] = useState('')
   if (!room)
@@ -33,11 +52,31 @@ export default function BookingPage() {
         </Link>
       </div>
     )
+  const partTime = stay.stayType === 'part-time'
+  const townships =
+    (townshipData as Record<string, { code: string; name: string }[]>)[guest.nrcRegion] ?? []
+  const maxChildren = childCapacity(room.guests, stay.guests)
+  const nrc = `${guest.nrcRegion}/${guest.nrcTownship}(${guest.nrcType})${guest.nrcSerial}`
+  const identityIssue = !validPhone(guest.phone)
+    ? 'Enter a valid phone number with country code, for example +959123456789.'
+    : !validNrc(nrc) || !townships.some((township) => township.code === guest.nrcTownship)
+      ? 'Complete the NRC in English, including the six-digit serial number.'
+      : null
   const issue =
     validateStay(stay) ??
-    (stay.guests > room.guests ? `This room accommodates up to ${room.guests} guests.` : null)
+    (stay.guests > room.guests || guest.children > maxChildren
+      ? `This room allows up to ${room.guests} adults plus 1 child. Additional children can use unused adult places.`
+      : null)
   const nights = issue ? 0 : nightsBetween(stay.checkIn, stay.checkOut)
-  const total = nights * room.price
+  const roomTotal = nights * room.price
+  const childPrice = childRate(room.price)
+  const childTotal = issue ? 0 : childPrice * guest.children * (partTime ? 1 : nights)
+  const total = roomTotal + childTotal
+  const pricePending = partTime || guest.extraBed
+  const duration = partTime
+    ? 'Part-time stay · 9am–5pm'
+    : `${nights} ${nights === 1 ? 'night' : 'nights'}`
+  const party = `${stay.guests} ${stay.guests === 1 ? 'adult' : 'adults'} · ${guest.children} ${guest.children === 1 ? 'child' : 'children'}`
   const moveTo = (next: typeof step) => {
     setStep(next)
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -53,7 +92,7 @@ export default function BookingPage() {
             <br />
             <em>all imagined.</em>
           </h1>
-          <p>Thank you, {guest.firstName}. Your demo booking is complete.</p>
+          <p>Thank you, {guest.fullName}. Your demo booking is complete.</p>
           <div className="confirmation-summary">
             <span className="eyebrow">DEMO REFERENCE · {reference}</span>
             <h3>{room.name}</h3>
@@ -61,10 +100,19 @@ export default function BookingPage() {
               {displayDate(stay.checkIn)} — {displayDate(stay.checkOut)}
             </p>
             <p>
-              {nights} {nights === 1 ? 'night' : 'nights'} · {stay.guests}{' '}
-              {stay.guests === 1 ? 'guest' : 'guests'}
+              {duration} · {party}
             </p>
-            <strong>{formatPrice(total)} MMK</strong>
+            <p>
+              {guest.extraBed ? 'Extra bed requested' : 'No extra bed'} ·{' '}
+              {guest.residency === 'local' ? 'Local' : 'Foreigner'}
+            </p>
+            {guest.arrival && <p>Estimated arrival: {guest.arrival}</p>}
+            {guest.promotion && <p>Promotion code: {guest.promotion} (pending verification)</p>}
+            {guest.requests && <p>Special request: {guest.requests}</p>}
+            <p>Phone: {guest.phone}</p>
+            <p>NRC: {nrc}</p>
+            {guest.children > 0 && <p>Child charge: {formatPrice(childTotal)} MMK</p>}
+            <strong>{pricePending ? 'Price to be confirmed' : `${formatPrice(total)} MMK`}</strong>
           </div>
           <p className="demo-note">
             This is a frontend demonstration. No room has been reserved,
@@ -79,7 +127,10 @@ export default function BookingPage() {
     )
   return (
     <div className="container page-space booking-page">
-      <Link className="text-link" to={`/rooms/${room.id}?${stayQuery(stay)}`}>
+      <Link
+        className="text-link"
+        to={`/rooms/${room.id}?${stayQuery(partTime ? { ...stay, stayType: 'overnight', checkOut: addDays(stay.checkIn, 1) } : stay)}`}
+      >
         <ArrowLeft size={16} /> Back to your room
       </Link>
       <div className="page-heading">
@@ -111,12 +162,30 @@ export default function BookingPage() {
             <form
               onSubmit={(event) => {
                 event.preventDefault()
-                setError(issue)
-                if (!issue) moveTo('review')
+                setError(issue ?? identityIssue)
+                if (!issue && !identityIssue) moveTo('review')
               }}
             >
               <h2>The details of your escape.</h2>
               <div className="form-grid">
+                <label className="full-width">
+                  Stay option
+                  <select
+                    value={partTime ? 'part-time' : 'overnight'}
+                    onChange={(event) => {
+                      const stayType = event.target.value as 'overnight' | 'part-time'
+                      setStay({
+                        ...stay,
+                        stayType,
+                        checkOut:
+                          stayType === 'part-time' ? stay.checkIn : addDays(stay.checkIn, 1),
+                      })
+                    }}
+                  >
+                    <option value="overnight">Overnight stay</option>
+                    <option value="part-time">Part-time stay (9am–5pm)</option>
+                  </select>
+                </label>
                 <label>
                   Check-in
                   <input
@@ -124,7 +193,13 @@ export default function BookingPage() {
                     required
                     min={dateString(new Date())}
                     value={stay.checkIn}
-                    onChange={(event) => setStay({ ...stay, checkIn: event.target.value })}
+                    onChange={(event) =>
+                      setStay({
+                        ...stay,
+                        checkIn: event.target.value,
+                        checkOut: partTime ? event.target.value : stay.checkOut,
+                      })
+                    }
                   />
                 </label>
                 <label>
@@ -132,46 +207,89 @@ export default function BookingPage() {
                   <input
                     type="date"
                     required
-                    min={addDays(stay.checkIn, 1)}
+                    min={partTime ? stay.checkIn : addDays(stay.checkIn, 1)}
+                    readOnly={partTime}
                     value={stay.checkOut}
                     onChange={(event) => setStay({ ...stay, checkOut: event.target.value })}
                   />
                 </label>
-                <label className="full-width">
-                  Guests
+                <label>
+                  Adults
                   <select
                     value={stay.guests}
                     onChange={(event) => setStay({ ...stay, guests: Number(event.target.value) })}
                   >
                     {[1, 2, 3, 4].map((value) => (
                       <option key={value} value={value} disabled={value > room.guests}>
-                        {value} {value === 1 ? 'guest' : 'guests'}
+                        {value} {value === 1 ? 'adult' : 'adults'}
                         {value > room.guests ? ' — exceeds room capacity' : ''}
                       </option>
                     ))}
                   </select>
                 </label>
                 <label>
-                  First name
-                  <input
-                    required
-                    autoComplete="given-name"
-                    maxLength={60}
-                    pattern=".*\S.*"
-                    value={guest.firstName}
-                    onChange={(event) => setGuest({ ...guest, firstName: event.target.value })}
-                  />
+                  Children
+                  <select
+                    value={guest.children}
+                    onChange={(event) =>
+                      setGuest({ ...guest, children: Number(event.target.value) })
+                    }
+                  >
+                    {[0, 1, 2, 3, 4].map((value) => (
+                      <option key={value} value={value} disabled={value > maxChildren}>
+                        {value} {value === 1 ? 'child' : 'children'}
+                      </option>
+                    ))}
+                  </select>
+                  <span className="optional">
+                    One child is welcome in addition to the room's adult capacity.{' '}
+                    {formatPrice(childPrice)} MMK per child{' '}
+                    {partTime ? 'per day stay' : 'per night'} (15% of the nightly room rate).
+                  </span>
                 </label>
                 <label>
-                  Last name
+                  Extra bed
+                  <select
+                    value={guest.extraBed ? 'yes' : 'no'}
+                    onChange={(event) =>
+                      setGuest({ ...guest, extraBed: event.target.value === 'yes' })
+                    }
+                  >
+                    <option value="no">No extra bed</option>
+                    <option value="yes">Request an extra bed</option>
+                  </select>
+                  <span className="optional">Availability and charge to be confirmed.</span>
+                </label>
+                <label>
+                  Estimated arrival time <span className="optional">(optional)</span>
+                  <input
+                    type="time"
+                    min={partTime ? '09:00' : undefined}
+                    max={partTime ? '17:00' : undefined}
+                    value={guest.arrival}
+                    onChange={(event) => setGuest({ ...guest, arrival: event.target.value })}
+                  />
+                </label>
+                <label className="full-width">
+                  Full name
                   <input
                     required
-                    autoComplete="family-name"
-                    maxLength={60}
+                    autoComplete="name"
+                    maxLength={120}
                     pattern=".*\S.*"
-                    value={guest.lastName}
-                    onChange={(event) => setGuest({ ...guest, lastName: event.target.value })}
+                    value={guest.fullName}
+                    onChange={(event) => setGuest({ ...guest, fullName: event.target.value })}
                   />
+                </label>
+                <label className="full-width">
+                  Guest type
+                  <select
+                    value={guest.residency}
+                    onChange={(event) => setGuest({ ...guest, residency: event.target.value })}
+                  >
+                    <option value="local">Local</option>
+                    <option value="foreigner">Foreigner</option>
+                  </select>
                 </label>
                 <label className="full-width">
                   Email address
@@ -185,11 +303,119 @@ export default function BookingPage() {
                   />
                 </label>
                 <label className="full-width">
-                  Anything we should know? <span className="optional">(optional)</span>
+                  Phone number
+                  <input
+                    type="tel"
+                    autoComplete="tel"
+                    required
+                    maxLength={25}
+                    value={guest.phone}
+                    onChange={(event) => setGuest({ ...guest, phone: event.target.value })}
+                    placeholder="+959123456789"
+                  />
+                  <span className="optional">
+                    Include the country code, such as +95 for Myanmar.
+                  </span>
+                </label>
+                <fieldset className="full-width nrc-fields">
+                  <legend>Myanmar NRC (required)</legend>
+                  <div className="nrc-row">
+                    <label>
+                      State
+                      <select
+                        aria-label="State / region code"
+                        required
+                        value={guest.nrcRegion}
+                        onChange={(event) =>
+                          setGuest({ ...guest, nrcRegion: event.target.value, nrcTownship: '' })
+                        }
+                      >
+                        <option value="">—</option>
+                        {Array.from({ length: 14 }, (_, index) => String(index + 1)).map((code) => (
+                          <option key={code} value={code}>
+                            {code}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                    <label>
+                      Township
+                      <select
+                        aria-label="Township code (English)"
+                        required
+                        disabled={!guest.nrcRegion}
+                        value={guest.nrcTownship}
+                        onChange={(event) =>
+                          setGuest({ ...guest, nrcTownship: event.target.value })
+                        }
+                      >
+                        <option value="">{guest.nrcRegion ? 'Select code' : 'State first'}</option>
+                        {townships.map((township) => (
+                          <option key={township.code} value={township.code}>
+                            {township.code} — {township.name}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                    <label>
+                      Type
+                      <select
+                        aria-label="Registration type"
+                        required
+                        value={guest.nrcType}
+                        onChange={(event) => setGuest({ ...guest, nrcType: event.target.value })}
+                      >
+                        <option value="">—</option>
+                        {['N', 'E', 'P', 'T', 'R', 'S', 'Y'].map((type) => (
+                          <option key={type} value={type}>
+                            ({type})
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                    <label>
+                      Number
+                      <input
+                        aria-label="Six-digit serial number"
+                        required
+                        type="text"
+                        inputMode="numeric"
+                        autoComplete="off"
+                        pattern="[0-9]{6}"
+                        minLength={6}
+                        maxLength={6}
+                        placeholder="123456"
+                        value={guest.nrcSerial}
+                        onChange={(event) => setGuest({ ...guest, nrcSerial: event.target.value })}
+                      />
+                    </label>
+                  </div>
+                  <p className="optional">
+                    Enter the details from your card in English. Example: 8/PAKHAKA(N)123456.
+                  </p>
+                  <p aria-live="polite">
+                    NRC: {guest.nrcRegion || '…'}/{guest.nrcTownship || '…'}({guest.nrcType || '…'})
+                    {guest.nrcSerial || '…'}
+                  </p>
+                </fieldset>
+                <label className="full-width">
+                  Promotion code <span className="optional">(optional)</span>
+                  <input
+                    maxLength={50}
+                    value={guest.promotion}
+                    onChange={(event) => setGuest({ ...guest, promotion: event.target.value })}
+                    placeholder="Enter your promotion code"
+                  />
+                  <span className="optional">
+                    Codes are subject to verification. No discount is applied in this demo.
+                  </span>
+                </label>
+                <label className="full-width">
+                  Special request <span className="optional">(optional)</span>
                   <textarea
                     rows={3}
                     maxLength={500}
-                    placeholder="An occasion, an arrival time, a little request…"
+                    placeholder="Tell us about any special requests…"
                     value={guest.requests}
                     onChange={(event) => setGuest({ ...guest, requests: event.target.value })}
                   />
@@ -213,29 +439,67 @@ export default function BookingPage() {
               <dl>
                 <div>
                   <dt>Guest</dt>
-                  <dd>
-                    {guest.firstName} {guest.lastName}
-                  </dd>
+                  <dd>{guest.fullName}</dd>
                 </div>
                 <div>
                   <dt>Email</dt>
                   <dd>{guest.email}</dd>
                 </div>
                 <div>
+                  <dt>Phone number</dt>
+                  <dd>{guest.phone}</dd>
+                </div>
+                <div>
+                  <dt>NRC</dt>
+                  <dd>{nrc}</dd>
+                </div>
+                <div>
+                  <dt>Child charge</dt>
+                  <dd>{formatPrice(childTotal)} MMK</dd>
+                </div>
+                <div>
                   <dt>Check-in</dt>
-                  <dd>{displayDate(stay.checkIn)} · from 2:00 PM</dd>
+                  <dd>
+                    {displayDate(stay.checkIn)} · {partTime ? '9:00 AM' : 'from 2:00 PM'}
+                  </dd>
                 </div>
                 <div>
                   <dt>Check-out</dt>
-                  <dd>{displayDate(stay.checkOut)} · by 12:00 PM</dd>
+                  <dd>
+                    {displayDate(stay.checkOut)} · {partTime ? 'by 5:00 PM' : 'by 12:00 PM'}
+                  </dd>
                 </div>
                 <div>
                   <dt>Guests</dt>
-                  <dd>{stay.guests}</dd>
+                  <dd>{party}</dd>
+                </div>
+                <div>
+                  <dt>Stay option</dt>
+                  <dd>{duration}</dd>
+                </div>
+                <div>
+                  <dt>Guest type</dt>
+                  <dd>{guest.residency === 'local' ? 'Local' : 'Foreigner'}</dd>
+                </div>
+                <div>
+                  <dt>Extra bed</dt>
+                  <dd>
+                    {guest.extraBed
+                      ? 'Requested — availability and charge to be confirmed'
+                      : 'None'}
+                  </dd>
+                </div>
+                <div>
+                  <dt>Estimated arrival</dt>
+                  <dd>{guest.arrival || 'Not provided'}</dd>
+                </div>
+                <div>
+                  <dt>Promotion code</dt>
+                  <dd>{guest.promotion ? `${guest.promotion} — pending verification` : 'None'}</dd>
                 </div>
                 {guest.requests && (
                   <div>
-                    <dt>Special requests</dt>
+                    <dt>Special request</dt>
                     <dd>{guest.requests}</dd>
                   </div>
                 )}
@@ -254,8 +518,8 @@ export default function BookingPage() {
                 <button
                   className="button button-dark"
                   onClick={() => {
-                    if (issue) {
-                      setError(issue)
+                    if (issue || identityIssue) {
+                      setError(issue ?? identityIssue)
                       moveTo('details')
                       return
                     }
@@ -280,10 +544,32 @@ export default function BookingPage() {
             <hr />
             <div className="price-row">
               <span>
-                {formatPrice(room.price)} MMK × {nights} nights
+                {partTime ? duration : `${formatPrice(room.price)} MMK × ${nights} nights`}
               </span>
-              <span>{formatPrice(total)}</span>
+              <span>{partTime ? 'To be confirmed' : formatPrice(roomTotal)}</span>
             </div>
+            {guest.children > 0 && (
+              <div className="price-row">
+                <span>
+                  Children ({guest.children} × {formatPrice(childPrice)} MMK ×{' '}
+                  {partTime ? '1 day stay' : `${nights} nights`})
+                </span>
+                <span>{formatPrice(childTotal)}</span>
+              </div>
+            )}
+            {guest.extraBed && (
+              <div className="price-row">
+                <span>Extra bed</span>
+                <span>To be confirmed</span>
+              </div>
+            )}
+            {guest.promotion && (
+              <div className="price-row">
+                <span>Promotion code</span>
+                <span>Pending verification</span>
+              </div>
+            )}
+            <p>{party}</p>
             <div className="price-row">
               <span>Breakfast</span>
               <span className="included">Included</span>
@@ -296,7 +582,13 @@ export default function BookingPage() {
             <div className="price-row total">
               <span>Total</span>
               <strong>
-                {formatPrice(total)} <small>MMK</small>
+                {pricePending ? (
+                  'To be confirmed'
+                ) : (
+                  <>
+                    {formatPrice(total)} <small>MMK</small>
+                  </>
+                )}
               </strong>
             </div>
             {issue && (

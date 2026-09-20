@@ -2,6 +2,19 @@ export interface Stay {
   checkIn: string
   checkOut: string
   guests: number
+  stayType?: 'overnight' | 'part-time'
+}
+
+export const childRate = (roomPrice: number) => Math.round(roomPrice * 0.15)
+export const childCapacity = (adultCapacity: number, adults: number) =>
+  Math.max(1, adultCapacity - adults + 1)
+
+export function validPhone(phone: string) {
+  return /^\+[1-9][0-9]{6,14}$/.test(phone.replace(/[\s()-]/g, ''))
+}
+
+export function validNrc(nrc: string) {
+  return /^(?:[1-9]|1[0-4])\/[A-Z]{3,12}\([A-Z]{1,3}\)[0-9]{6}$/.test(nrc)
 }
 
 export function dateString(date: Date) {
@@ -30,7 +43,9 @@ export function validateStay(stay: Stay, today = dateString(new Date())): string
   if (!validDate(stay.checkIn) || !validDate(stay.checkOut))
     return 'Please choose valid check-in and check-out dates.'
   if (stay.checkIn < today) return 'Check-in cannot be in the past.'
-  if (stay.checkOut <= stay.checkIn) return 'Check-out must be after check-in.'
+  if (stay.stayType === 'part-time') {
+    if (stay.checkOut !== stay.checkIn) return 'Part-time stays must begin and end on the same day.'
+  } else if (stay.checkOut <= stay.checkIn) return 'Check-out must be after check-in.'
   if (nightsBetween(stay.checkIn, stay.checkOut) > 30)
     return 'Please choose a stay of 30 nights or fewer.'
   if (!Number.isInteger(stay.guests) || stay.guests < 1 || stay.guests > 4)

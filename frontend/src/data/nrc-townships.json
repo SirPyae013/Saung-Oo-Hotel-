@@ -1,0 +1,1814 @@
+{
+  "1": [
+    {
+      "code": "AHGAYA",
+      "name": "Ing Yan Yan"
+    },
+    {
+      "code": "BAMANA",
+      "name": "Bha Mo"
+    },
+    {
+      "code": "DAPHAYA",
+      "name": "Dot Phone Yan"
+    },
+    {
+      "code": "HAPANA",
+      "name": "Ho Pin"
+    },
+    {
+      "code": "KAMANA",
+      "name": "Pha Kant"
+    },
+    {
+      "code": "KAMATA",
+      "name": "Ka Mine"
+    },
+    {
+      "code": "KAPATA",
+      "name": "Kan Yeik Ti"
+    },
+    {
+      "code": "KHABADA",
+      "name": "Khaw Bu Dae"
+    },
+    {
+      "code": "KHALAPHA",
+      "name": "Khaung Lan Phoo"
+    },
+    {
+      "code": "KHAPHANA",
+      "name": "Chi Phwe"
+    },
+    {
+      "code": "LAGANA",
+      "name": "Lwe Ge"
+    },
+    {
+      "code": "MAKANA",
+      "name": "Myit Kyi Na"
+    },
+    {
+      "code": "MAKATA",
+      "name": "Mo Gaung"
+    },
+    {
+      "code": "MAKHABA",
+      "name": "Ma Chan Baw"
+    },
+    {
+      "code": "MALANA",
+      "name": "Myohlamyo"
+    },
+    {
+      "code": "MAMANA",
+      "name": "Moe Mauk"
+    },
+    {
+      "code": "MANYANA",
+      "name": "Moh Nyin"
+    },
+    {
+      "code": "MASANA",
+      "name": "Man Si"
+    },
+    {
+      "code": "NAMANA",
+      "name": "Naung Moon"
+    },
+    {
+      "code": "PANADA",
+      "name": "Pan Nan Din"
+    },
+    {
+      "code": "PATAAH",
+      "name": "Pu Ta O"
+    },
+    {
+      "code": "PAWANA",
+      "name": "Panwar"
+    },
+    {
+      "code": "PHAKANA",
+      "name": "Pha Kant"
+    },
+    {
+      "code": "SABATA",
+      "name": "Sin Bo"
+    },
+    {
+      "code": "SADANA",
+      "name": "Hsa Done"
+    },
+    {
+      "code": "SALANA",
+      "name": "Saw Law"
+    },
+    {
+      "code": "SAPABA",
+      "name": "Sum Pra Bum"
+    },
+    {
+      "code": "TANANA",
+      "name": "Ta Naing"
+    },
+    {
+      "code": "WAMANA",
+      "name": "Waing Maw"
+    },
+    {
+      "code": "YABAYA",
+      "name": "Shin Bway Yan"
+    },
+    {
+      "code": "YAKANA",
+      "name": "Shwe Gu"
+    }
+  ],
+  "2": [
+    {
+      "code": "BALAKHA",
+      "name": "Baw La Khe"
+    },
+    {
+      "code": "DAMASA",
+      "name": "Di Maw So"
+    },
+    {
+      "code": "LAKANA",
+      "name": "Loi Kaw"
+    },
+    {
+      "code": "MASANA",
+      "name": "Meisi"
+    },
+    {
+      "code": "PHASANA",
+      "name": "Par Saung"
+    },
+    {
+      "code": "PHAYASA",
+      "name": "Phru So"
+    },
+    {
+      "code": "YATANA",
+      "name": "Shar Daw"
+    },
+    {
+      "code": "YATHANA",
+      "name": "Ywathit"
+    }
+  ],
+  "3": [
+    {
+      "code": "BAAHNA",
+      "name": "Hpa-An"
+    },
+    {
+      "code": "BAGALA",
+      "name": "Baw Ga Li"
+    },
+    {
+      "code": "BAKALA",
+      "name": "Baw Ga Li"
+    },
+    {
+      "code": "BATHASA",
+      "name": "Pa Yar Thone Zu"
+    },
+    {
+      "code": "KADANA",
+      "name": "Kyai Don"
+    },
+    {
+      "code": "KAKAYA",
+      "name": "Kaw Ka Reik"
+    },
+    {
+      "code": "KAMAMA",
+      "name": "Ka Ma Maung"
+    },
+    {
+      "code": "KASAKA",
+      "name": "Kyar In Seik Kyi"
+    },
+    {
+      "code": "LABANA",
+      "name": "Hlaing Bwe"
+    },
+    {
+      "code": "LATHANA",
+      "name": "Leiktho"
+    },
+    {
+      "code": "MAWATA",
+      "name": "Mya Wa Dy"
+    },
+    {
+      "code": "PAKANA",
+      "name": "Paing Kyon"
+    },
+    {
+      "code": "PHAPANA",
+      "name": "Pharpon-Kayin"
+    },
+    {
+      "code": "SAKALA",
+      "name": "Su Ga Li"
+    },
+    {
+      "code": "THATAKA",
+      "name": "Than Daung Gyi"
+    },
+    {
+      "code": "THATANA",
+      "name": "Thantaung"
+    },
+    {
+      "code": "WALAMA",
+      "name": "Wale Myaing"
+    },
+    {
+      "code": "YAYATHA",
+      "name": "Shan Ywa Thit"
+    }
+  ],
+  "4": [
+    {
+      "code": "HAKHANA",
+      "name": "Haka"
+    },
+    {
+      "code": "HTATALA",
+      "name": "Htan Ta Lang"
+    },
+    {
+      "code": "KAKHANA",
+      "name": "Cikha"
+    },
+    {
+      "code": "KAPALA",
+      "name": "Kan Pa Let"
+    },
+    {
+      "code": "MATANA",
+      "name": "Mindat"
+    },
+    {
+      "code": "MATAPA",
+      "name": "Ma Tu Pi"
+    },
+    {
+      "code": "PALAWA",
+      "name": "Pa Let Wa"
+    },
+    {
+      "code": "PHALANA",
+      "name": "Fa Lam"
+    },
+    {
+      "code": "SAMANA",
+      "name": "Sami"
+    },
+    {
+      "code": "TATANA",
+      "name": "Tedim"
+    },
+    {
+      "code": "TAZANA",
+      "name": "Ton Zaung"
+    },
+    {
+      "code": "YAKHADA",
+      "name": "Rih Khua Dal"
+    },
+    {
+      "code": "YAZANA",
+      "name": "Yayswar"
+    }
+  ],
+  "5": [
+    {
+      "code": "AHTANA",
+      "name": "In Daw-Sagaing"
+    },
+    {
+      "code": "AHYATA",
+      "name": "A Yar Taw"
+    },
+    {
+      "code": "BAMANA",
+      "name": "Ban Mauk"
+    },
+    {
+      "code": "BATALA",
+      "name": "Bu Ta Lin"
+    },
+    {
+      "code": "DAHANA",
+      "name": "Don Hee"
+    },
+    {
+      "code": "DAPAYA",
+      "name": "De Pa Yin"
+    },
+    {
+      "code": "HAMALA",
+      "name": "Ho Ma Lin"
+    },
+    {
+      "code": "HSAMARA",
+      "name": "Swammara"
+    },
+    {
+      "code": "HTAKHANA",
+      "name": "Hti Gyaing"
+    },
+    {
+      "code": "HTAPAKHA",
+      "name": "Htan Par Kway"
+    },
+    {
+      "code": "KABALA",
+      "name": "Kam Ba Lu"
+    },
+    {
+      "code": "KALAHTA",
+      "name": "Ka Lay"
+    },
+    {
+      "code": "KALANA",
+      "name": "Kyunhla"
+    },
+    {
+      "code": "KALATA",
+      "name": "Kawlin"
+    },
+    {
+      "code": "KALAWA",
+      "name": "Kalewa"
+    },
+    {
+      "code": "KAMANA",
+      "name": "Kyaukmyaung-Sagaing"
+    },
+    {
+      "code": "KANANA",
+      "name": "Kani"
+    },
+    {
+      "code": "KATHANA",
+      "name": "Ka Tha"
+    },
+    {
+      "code": "KHAOUNA",
+      "name": "Khin U"
+    },
+    {
+      "code": "KHAOUTA",
+      "name": "Chaung Oo"
+    },
+    {
+      "code": "KHAPANA",
+      "name": "Kham Pat"
+    },
+    {
+      "code": "KHATANA",
+      "name": "Hkamti"
+    },
+    {
+      "code": "LAHANA",
+      "name": "Lahe"
+    },
+    {
+      "code": "LAYANA",
+      "name": "Le Shi"
+    },
+    {
+      "code": "MAKANA",
+      "name": "Min Kin"
+    },
+    {
+      "code": "MALANA",
+      "name": "Mawlaik"
+    },
+    {
+      "code": "MAMANA",
+      "name": "Myaung"
+    },
+    {
+      "code": "MAMATA",
+      "name": "Minmu"
+    },
+    {
+      "code": "MAPALA",
+      "name": "Mopine Loot"
+    },
+    {
+      "code": "MATHANA",
+      "name": "Myo Thit-Sagaing"
+    },
+    {
+      "code": "MAYANA",
+      "name": "Mon Ywa"
+    },
+    {
+      "code": "NAYANA",
+      "name": "Nan Yun"
+    },
+    {
+      "code": "NGAZANA",
+      "name": "Ngan Zun"
+    },
+    {
+      "code": "PALABA",
+      "name": "Pin Le Bu"
+    },
+    {
+      "code": "PALANA",
+      "name": "Palae"
+    },
+    {
+      "code": "PASANA",
+      "name": "Pansaung"
+    },
+    {
+      "code": "PHAPANA",
+      "name": "Phaung Pyin"
+    },
+    {
+      "code": "SAKANA",
+      "name": "Sa Gaing"
+    },
+    {
+      "code": "SALAKA",
+      "name": "Sa Lin Gyi"
+    },
+    {
+      "code": "TAMANA",
+      "name": "Tamu"
+    },
+    {
+      "code": "TASANA",
+      "name": "Tan Sei"
+    },
+    {
+      "code": "WALANA",
+      "name": "Wet Let"
+    },
+    {
+      "code": "WATHANA",
+      "name": "Wuntho"
+    },
+    {
+      "code": "YABANA",
+      "name": "Shwe Bo"
+    },
+    {
+      "code": "YAMAPA",
+      "name": "Yin Mar Pin"
+    },
+    {
+      "code": "YAOUNA",
+      "name": "Ye U"
+    },
+    {
+      "code": "YATHAKA",
+      "name": "Ywa Thit Gyi"
+    }
+  ],
+  "6": [
+    {
+      "code": "BAPANA",
+      "name": "Boke Pyin"
+    },
+    {
+      "code": "HTAWANA",
+      "name": "Da Wei"
+    },
+    {
+      "code": "KALAAH",
+      "name": "Ka Lein Aung"
+    },
+    {
+      "code": "KASANA",
+      "name": "Kyun Su"
+    },
+    {
+      "code": "KATHANA",
+      "name": "Kaw Thoung"
+    },
+    {
+      "code": "KAYAYA",
+      "name": "Ka Ra Thu Ri"
+    },
+    {
+      "code": "KHAMAKA",
+      "name": "Kha Mauk Kyi"
+    },
+    {
+      "code": "LALANA",
+      "name": "Loung Lon"
+    },
+    {
+      "code": "MAAHNA",
+      "name": "Myeik A Nout"
+    },
+    {
+      "code": "MAAHYA",
+      "name": "Myeik A She"
+    },
+    {
+      "code": "MAMANA",
+      "name": "Myeik"
+    },
+    {
+      "code": "MATANA",
+      "name": "Myit Ta"
+    },
+    {
+      "code": "NGAYAKA",
+      "name": "Nga Yoke Kaung - Ta Nin Thar Yi"
+    },
+    {
+      "code": "PAKAMA",
+      "name": "Pyi Gyi Man Daing"
+    },
+    {
+      "code": "PALANA",
+      "name": "Palaw"
+    },
+    {
+      "code": "PALATA",
+      "name": "Pa Lauk"
+    },
+    {
+      "code": "TANATHA",
+      "name": "Ta Nin Thar Yi-Tha"
+    },
+    {
+      "code": "TATHAYA",
+      "name": "Ta Nin Thar Yi"
+    },
+    {
+      "code": "THAYAKHA",
+      "name": "Tha Yet Chaung"
+    },
+    {
+      "code": "YAPHANA",
+      "name": "Ye Byu"
+    }
+  ],
+  "7": [
+    {
+      "code": "AHPHANA",
+      "name": "Ok Phat"
+    },
+    {
+      "code": "AHTANA",
+      "name": "Oa Twin"
+    },
+    {
+      "code": "DAOUNA",
+      "name": "Daik U"
+    },
+    {
+      "code": "HTATAPA",
+      "name": "Htan Ta Pin"
+    },
+    {
+      "code": "KAKANA",
+      "name": "Kuauk Kone"
+    },
+    {
+      "code": "KAPAKA",
+      "name": "Gyo Bin Gauk"
+    },
+    {
+      "code": "KATAKHA",
+      "name": "Kyauk Ta Ga"
+    },
+    {
+      "code": "KATATA",
+      "name": "Kay Tu Ma Ti"
+    },
+    {
+      "code": "KAWANA",
+      "name": "Ka Wa"
+    },
+    {
+      "code": "LAPATA",
+      "name": "Let Pa Dan"
+    },
+    {
+      "code": "MADANA",
+      "name": "Ma Daunk"
+    },
+    {
+      "code": "MALANA",
+      "name": "Min Hla"
+    },
+    {
+      "code": "MANYANA",
+      "name": "Monyo"
+    },
+    {
+      "code": "NATALA",
+      "name": "Nat Ta Lin"
+    },
+    {
+      "code": "NYALAPA",
+      "name": "Nyaung Le Bin"
+    },
+    {
+      "code": "PAKHANA",
+      "name": "Bago"
+    },
+    {
+      "code": "PAKHATA",
+      "name": "Paukkhaung"
+    },
+    {
+      "code": "PAMANA",
+      "name": "Pyay"
+    },
+    {
+      "code": "PANAKA",
+      "name": "Pae Nwe Kone"
+    },
+    {
+      "code": "PATALA",
+      "name": "Paung Ta Lae"
+    },
+    {
+      "code": "PATANA",
+      "name": "Pa Daung"
+    },
+    {
+      "code": "PATASA",
+      "name": "Pyun Tan Sar"
+    },
+    {
+      "code": "PATATA",
+      "name": "Paun De"
+    },
+    {
+      "code": "PHAMANA",
+      "name": "Pyu"
+    },
+    {
+      "code": "TANGANA",
+      "name": "Toungoo"
+    },
+    {
+      "code": "THAKANA",
+      "name": "The Gon"
+    },
+    {
+      "code": "THANAPA",
+      "name": "Tanatpin"
+    },
+    {
+      "code": "THASANA",
+      "name": "Thon Sae"
+    },
+    {
+      "code": "THAWATA",
+      "name": "Tha Ya Wa Dy"
+    },
+    {
+      "code": "WAMANA",
+      "name": "Waw"
+    },
+    {
+      "code": "YAKANA",
+      "name": "Shweg Yin"
+    },
+    {
+      "code": "YATANA",
+      "name": "Shwe Daung"
+    },
+    {
+      "code": "YATAYA",
+      "name": "Yae Da She"
+    },
+    {
+      "code": "ZAKANA",
+      "name": "Zigon"
+    }
+  ],
+  "8": [
+    {
+      "code": "AHLANA",
+      "name": "Aung Lan"
+    },
+    {
+      "code": "GAGANA",
+      "name": "Gan Gaw"
+    },
+    {
+      "code": "HTALANA",
+      "name": "Hti Lin"
+    },
+    {
+      "code": "KAHTANA",
+      "name": "Kyauk Htu"
+    },
+    {
+      "code": "KAMANA",
+      "name": "Kam Ma"
+    },
+    {
+      "code": "KHAMANA",
+      "name": "Chauk"
+    },
+    {
+      "code": "MABANA",
+      "name": "Min Bu"
+    },
+    {
+      "code": "MAHTANA",
+      "name": "Myay Htae"
+    },
+    {
+      "code": "MAKANA",
+      "name": "Ma Gway"
+    },
+    {
+      "code": "MALANA",
+      "name": "Min Hla-Magway"
+    },
+    {
+      "code": "MAMANA",
+      "name": "Myaing"
+    },
+    {
+      "code": "MATANA",
+      "name": "Min Tone"
+    },
+    {
+      "code": "MATHANA",
+      "name": "Myo Thit-Magway"
+    },
+    {
+      "code": "NAMANA",
+      "name": "Nat Mauk"
+    },
+    {
+      "code": "NGAPHANA",
+      "name": "Nga Phae"
+    },
+    {
+      "code": "PAKHAKA",
+      "name": "Pa Kok Ku"
+    },
+    {
+      "code": "PAMANA",
+      "name": "Pauk"
+    },
+    {
+      "code": "PAPHANA",
+      "name": "Pwint Phyu"
+    },
+    {
+      "code": "SAKANA",
+      "name": "Sa Ku"
+    },
+    {
+      "code": "SALANA",
+      "name": "Sa Lin"
+    },
+    {
+      "code": "SAMANA",
+      "name": "Hsaw"
+    },
+    {
+      "code": "SAPAWA",
+      "name": "Sin Paung Wae"
+    },
+    {
+      "code": "SAPHANA",
+      "name": "Seik Phyu"
+    },
+    {
+      "code": "SATAYA",
+      "name": "Say Tot Ta Ra"
+    },
+    {
+      "code": "TATAKA",
+      "name": "Taung Dwin Gyi"
+    },
+    {
+      "code": "THAYANA",
+      "name": "Tha Yet"
+    },
+    {
+      "code": "YAMANA",
+      "name": "Yaw"
+    },
+    {
+      "code": "YANAKHA",
+      "name": "Yay Nan Chaung"
+    },
+    {
+      "code": "YASAKA",
+      "name": "Yay Sa Kyo"
+    }
+  ],
+  "9": [
+    {
+      "code": "AHMAYA",
+      "name": "A Ma Ra Pu Ra"
+    },
+    {
+      "code": "AHMAZA",
+      "name": "Aung Mye Thar Zan"
+    },
+    {
+      "code": "AUTATHA",
+      "name": "Ot Ta Ra Thiri"
+    },
+    {
+      "code": "DAKHATHA",
+      "name": "Dek Khi Na Thiri"
+    },
+    {
+      "code": "KAMANA",
+      "name": "Ku Me"
+    },
+    {
+      "code": "KAPATA",
+      "name": "Kyauk Pa Daung"
+    },
+    {
+      "code": "KASANA",
+      "name": "Kyauk Se"
+    },
+    {
+      "code": "KHAAHZA",
+      "name": "Chan Aye Thar Zan"
+    },
+    {
+      "code": "KHAMASA",
+      "name": "Chan Mya Thar Zi"
+    },
+    {
+      "code": "LAWANA",
+      "name": "Lewe"
+    },
+    {
+      "code": "MAHAMA",
+      "name": "Ma Ha Aung Mye"
+    },
+    {
+      "code": "MAHTALA",
+      "name": "Mei Kti La"
+    },
+    {
+      "code": "MAKANA",
+      "name": "Mogok"
+    },
+    {
+      "code": "MAKHANA",
+      "name": "Myin Gyan"
+    },
+    {
+      "code": "MALANA",
+      "name": "Ma Hlaing"
+    },
+    {
+      "code": "MAMANA",
+      "name": "May Myo"
+    },
+    {
+      "code": "MANAMA",
+      "name": "Mann Nauk Myauk"
+    },
+    {
+      "code": "MANATA",
+      "name": "Mann Nauk Taung"
+    },
+    {
+      "code": "MATAYA",
+      "name": "Ma Da Ya"
+    },
+    {
+      "code": "MATHANA",
+      "name": "Myit Thar"
+    },
+    {
+      "code": "MAYAMA",
+      "name": "Mann Shae Myauk"
+    },
+    {
+      "code": "MAYATA",
+      "name": "Mann Shae Taung"
+    },
+    {
+      "code": "NAHTAKA",
+      "name": "Na To Gyi"
+    },
+    {
+      "code": "NGATHAYA",
+      "name": "Nga Tha Yauk"
+    },
+    {
+      "code": "NGAZANA",
+      "name": "Ngan Zun"
+    },
+    {
+      "code": "NYAOUNA",
+      "name": "Nyaung U"
+    },
+    {
+      "code": "PABANA",
+      "name": "Pyaw Bwe"
+    },
+    {
+      "code": "PABATHA",
+      "name": "Pob Ba Thiri"
+    },
+    {
+      "code": "PAKAKHA",
+      "name": "Pyi Gyi Ta Khun"
+    },
+    {
+      "code": "PAMANA",
+      "name": "Pyin Ma Na"
+    },
+    {
+      "code": "PAOULA",
+      "name": "Pyin Oo Lwin"
+    },
+    {
+      "code": "PATHAKA",
+      "name": "Pa Thein Gyi"
+    },
+    {
+      "code": "SAKANA",
+      "name": "Sin Ku"
+    },
+    {
+      "code": "SAKATA",
+      "name": "Sin Gaing"
+    },
+    {
+      "code": "TAKANA",
+      "name": "Tatkon"
+    },
+    {
+      "code": "TAKATA",
+      "name": "Ta Gaung"
+    },
+    {
+      "code": "TATAOU",
+      "name": "Tadau"
+    },
+    {
+      "code": "TATHANA",
+      "name": "Taung Tha"
+    },
+    {
+      "code": "THAPAKA",
+      "name": "Tha Beik Kyin"
+    },
+    {
+      "code": "THASANA",
+      "name": "Tha Zi"
+    },
+    {
+      "code": "WATANA",
+      "name": "Wun Dwin"
+    },
+    {
+      "code": "YAKANA",
+      "name": "Shwekyin"
+    },
+    {
+      "code": "YAMATHA",
+      "name": "Ya Me Thin"
+    },
+    {
+      "code": "ZABATHA",
+      "name": "Za Bu Thiri"
+    },
+    {
+      "code": "ZAYATHA",
+      "name": "Ze Yar Thiri"
+    }
+  ],
+  "10": [
+    {
+      "code": "BALANA",
+      "name": "Bi Lin"
+    },
+    {
+      "code": "KAHTANA",
+      "name": "Kyaik To"
+    },
+    {
+      "code": "KAKHAMA",
+      "name": "Kyaik Kha Mi"
+    },
+    {
+      "code": "KAMAYA",
+      "name": "Kyaike Ma Raw"
+    },
+    {
+      "code": "KHASANA",
+      "name": "Chaung Zon"
+    },
+    {
+      "code": "KHAZANA",
+      "name": "Khaw Zar"
+    },
+    {
+      "code": "LAMANA",
+      "name": "La Mine"
+    },
+    {
+      "code": "MADANA",
+      "name": "Mudon"
+    },
+    {
+      "code": "MALAMA",
+      "name": "Maw La Myine"
+    },
+    {
+      "code": "PAMANA",
+      "name": "Paung"
+    },
+    {
+      "code": "THAHTANA",
+      "name": "Thahton"
+    },
+    {
+      "code": "THAPHAYA",
+      "name": "Than Byu Za Yat"
+    },
+    {
+      "code": "YAMANA",
+      "name": "Ye"
+    }
+  ],
+  "11": [
+    {
+      "code": "AHMANA",
+      "name": "An"
+    },
+    {
+      "code": "BATHATA",
+      "name": "Maungtaw"
+    },
+    {
+      "code": "GAMANA",
+      "name": "Gwa"
+    },
+    {
+      "code": "KAPHANA",
+      "name": "Kyauk Pyu"
+    },
+    {
+      "code": "KATALA",
+      "name": "Kyei Nta Li"
+    },
+    {
+      "code": "KATANA",
+      "name": "Kyauk Taw"
+    },
+    {
+      "code": "MAAHNA",
+      "name": "Mann Aung"
+    },
+    {
+      "code": "MAAHTA",
+      "name": "Maei"
+    },
+    {
+      "code": "MAOUNA",
+      "name": "Myauk U"
+    },
+    {
+      "code": "MAPANA",
+      "name": "Min Bya"
+    },
+    {
+      "code": "MAPATA",
+      "name": "Mye Bon"
+    },
+    {
+      "code": "MATANA",
+      "name": "Maung Taw"
+    },
+    {
+      "code": "PANAKA",
+      "name": "Pon Na Gyun"
+    },
+    {
+      "code": "PANATA",
+      "name": "Pon Na Gyun"
+    },
+    {
+      "code": "PATANA",
+      "name": "Pauk Taw"
+    },
+    {
+      "code": "SATANA",
+      "name": "Sit Tway"
+    },
+    {
+      "code": "TAKANA",
+      "name": "Toungup"
+    },
+    {
+      "code": "TAPAWA",
+      "name": "Taung Pyo"
+    },
+    {
+      "code": "THATANA",
+      "name": "Than Dwe"
+    },
+    {
+      "code": "YABANA",
+      "name": "Yan Bye"
+    },
+    {
+      "code": "YATHATA",
+      "name": "Ya The Daung"
+    }
+  ],
+  "12": [
+    {
+      "code": "AHLANA",
+      "name": "Ahlon"
+    },
+    {
+      "code": "AHSANA",
+      "name": "Insein"
+    },
+    {
+      "code": "BAHANA",
+      "name": "Bahan"
+    },
+    {
+      "code": "BATAHTA",
+      "name": "Bo Ta Htaung"
+    },
+    {
+      "code": "DAGAMA",
+      "name": "North Dagon"
+    },
+    {
+      "code": "DAGANA",
+      "name": "Dagon"
+    },
+    {
+      "code": "DAGASA",
+      "name": "Dagon Myothit(Seikkan)"
+    },
+    {
+      "code": "DAGATA",
+      "name": "South Dagon"
+    },
+    {
+      "code": "DAGAYA",
+      "name": "Dagon Myothit(East)"
+    },
+    {
+      "code": "DALANA",
+      "name": "Dala"
+    },
+    {
+      "code": "DAPANA",
+      "name": "Daw Bon"
+    },
+    {
+      "code": "HTATAPA",
+      "name": "Htan Ta Bin"
+    },
+    {
+      "code": "KAKAKA",
+      "name": "Co Co Gyun"
+    },
+    {
+      "code": "KAKHAKA",
+      "name": "Kun Gyan Gon"
+    },
+    {
+      "code": "KAMANA",
+      "name": "Kaw Hmu"
+    },
+    {
+      "code": "KAMATA",
+      "name": "Kyi Myin Dine"
+    },
+    {
+      "code": "KAMAYA",
+      "name": "Ka Ma Yut"
+    },
+    {
+      "code": "KATANA",
+      "name": "Kyauk Tan"
+    },
+    {
+      "code": "KATATA",
+      "name": "Kyauk Ta Da"
+    },
+    {
+      "code": "KHAYANA",
+      "name": "Khayan"
+    },
+    {
+      "code": "LAKANA",
+      "name": "Hlegu"
+    },
+    {
+      "code": "LAMANA",
+      "name": "Hlaing"
+    },
+    {
+      "code": "LAMATA",
+      "name": "Lan Ma Daw"
+    },
+    {
+      "code": "LATHANA",
+      "name": "Latha"
+    },
+    {
+      "code": "LATHAYA",
+      "name": "Hline Tha Ya"
+    },
+    {
+      "code": "MABANA",
+      "name": "Hmawby"
+    },
+    {
+      "code": "MAGADA",
+      "name": "Min Ga La Don"
+    },
+    {
+      "code": "MAGATA",
+      "name": "Mingala Taung Nyunt"
+    },
+    {
+      "code": "MAYAKA",
+      "name": "Mayan Gon"
+    },
+    {
+      "code": "OUKAMA",
+      "name": "Shwe Pauk Kan"
+    },
+    {
+      "code": "OUKATA",
+      "name": "South Okkalapa"
+    },
+    {
+      "code": "PABATA",
+      "name": "Pa Be Dan"
+    },
+    {
+      "code": "PAZATA",
+      "name": "Pa Zun Taung"
+    },
+    {
+      "code": "SAKAKHA",
+      "name": "Seikkyi/Khanaungto"
+    },
+    {
+      "code": "SAKANA",
+      "name": "Seikkan"
+    },
+    {
+      "code": "SAKHANA",
+      "name": "San Gyoung"
+    },
+    {
+      "code": "TAKANA",
+      "name": "Taikkyi"
+    },
+    {
+      "code": "TAMANA",
+      "name": "Ta Mway"
+    },
+    {
+      "code": "TATAHTA",
+      "name": "Tatar"
+    },
+    {
+      "code": "TATANA",
+      "name": "Twan Tay"
+    },
+    {
+      "code": "THAGAKA",
+      "name": "Thin Gan Gyun"
+    },
+    {
+      "code": "THAKATA",
+      "name": "Tha Kay Ta"
+    },
+    {
+      "code": "THAKHANA",
+      "name": "Thon Gwa"
+    },
+    {
+      "code": "THALANA",
+      "name": "Than Lyin"
+    },
+    {
+      "code": "YAKANA",
+      "name": "Yan Kin"
+    },
+    {
+      "code": "YAPATHA",
+      "name": "Shwe Pyi Tha"
+    }
+  ],
+  "13": [
+    {
+      "code": "AHPANA",
+      "name": "Aung Pan"
+    },
+    {
+      "code": "AHTANA",
+      "name": "In Daw-Shan"
+    },
+    {
+      "code": "AHTHAYA",
+      "name": "Aye Thar Yar"
+    },
+    {
+      "code": "HAHANA",
+      "name": "Heho"
+    },
+    {
+      "code": "HAMANA",
+      "name": "Ho Mane"
+    },
+    {
+      "code": "HAPANA",
+      "name": "Ho Pon"
+    },
+    {
+      "code": "HAPATA",
+      "name": "Ho Pan"
+    },
+    {
+      "code": "KAHANA",
+      "name": "Kun Hing"
+    },
+    {
+      "code": "KAKANA",
+      "name": "Kon Gyan"
+    },
+    {
+      "code": "KAKHANA",
+      "name": "Kut Kai"
+    },
+    {
+      "code": "KALADA",
+      "name": "Karli"
+    },
+    {
+      "code": "KALAHTA",
+      "name": "Keng Lat"
+    },
+    {
+      "code": "KALANA",
+      "name": "Ka Law"
+    },
+    {
+      "code": "KALATA",
+      "name": "Kun Lon"
+    },
+    {
+      "code": "KAMANA",
+      "name": "Kyauk Me"
+    },
+    {
+      "code": "KATALA",
+      "name": "Kyauk Ta Lon Gyi"
+    },
+    {
+      "code": "KATANA",
+      "name": "Keng Tung"
+    },
+    {
+      "code": "KATATA",
+      "name": "Keng Taung"
+    },
+    {
+      "code": "KATHANA",
+      "name": "Kehsi"
+    },
+    {
+      "code": "KHALANA",
+      "name": "Kho Lan"
+    },
+    {
+      "code": "KHAYAHA",
+      "name": "Chin Shwe Haw"
+    },
+    {
+      "code": "LAKANA",
+      "name": "Lau Kine"
+    },
+    {
+      "code": "LAKHANA",
+      "name": "Le Char"
+    },
+    {
+      "code": "LAKHATA",
+      "name": "Lin Khe"
+    },
+    {
+      "code": "LALANA",
+      "name": "Loilin"
+    },
+    {
+      "code": "LAYANA",
+      "name": "Lashio"
+    },
+    {
+      "code": "MABANA",
+      "name": "Ma Bane"
+    },
+    {
+      "code": "MAHAYA",
+      "name": "Man He Ro"
+    },
+    {
+      "code": "MAHTANA",
+      "name": "Mine Htone"
+    },
+    {
+      "code": "MAHTATA",
+      "name": "Maw Htike"
+    },
+    {
+      "code": "MAKAHTA",
+      "name": "Mankan"
+    },
+    {
+      "code": "MAKANA",
+      "name": "Mine Koke"
+    },
+    {
+      "code": "MAKATA",
+      "name": "Mone Koe"
+    },
+    {
+      "code": "MAKHANA",
+      "name": "Mong Kai"
+    },
+    {
+      "code": "MAKHATA",
+      "name": "Mine Koke"
+    },
+    {
+      "code": "MALANA",
+      "name": "Mine Lar"
+    },
+    {
+      "code": "MALATA",
+      "name": "Mine Lon"
+    },
+    {
+      "code": "MAMAHTA",
+      "name": "Mine Maw"
+    },
+    {
+      "code": "MAMANA",
+      "name": "Mak Man"
+    },
+    {
+      "code": "MAMATA",
+      "name": "Mo Meik"
+    },
+    {
+      "code": "MANANA",
+      "name": "Mone"
+    },
+    {
+      "code": "MANATA",
+      "name": "Mine Naung"
+    },
+    {
+      "code": "MANGANA",
+      "name": "Mine Ngaw"
+    },
+    {
+      "code": "MAPAHTA",
+      "name": "Mine Pauk"
+    },
+    {
+      "code": "MAPANA",
+      "name": "Minepan"
+    },
+    {
+      "code": "MAPATA",
+      "name": "Mine Pyin"
+    },
+    {
+      "code": "MAPHANA",
+      "name": "Mine Phyat"
+    },
+    {
+      "code": "MAPHATA",
+      "name": "Man Phant"
+    },
+    {
+      "code": "MARATA",
+      "name": "Mine Yal"
+    },
+    {
+      "code": "MASANA",
+      "name": "Mine Sat"
+    },
+    {
+      "code": "MASATA",
+      "name": "Muse"
+    },
+    {
+      "code": "MATANA",
+      "name": "Mine Tone"
+    },
+    {
+      "code": "MATATA",
+      "name": "Man Ton"
+    },
+    {
+      "code": "MAYAHTA",
+      "name": "Mine Yaung"
+    },
+    {
+      "code": "MAYANA",
+      "name": "Mineshu"
+    },
+    {
+      "code": "MAYATA",
+      "name": "Mine Yaung"
+    },
+    {
+      "code": "NAHSANA",
+      "name": "Nanhsam-North"
+    },
+    {
+      "code": "NAKHANA",
+      "name": "Nam Kham"
+    },
+    {
+      "code": "NAKHATA",
+      "name": "Naung Khio"
+    },
+    {
+      "code": "NAMATA",
+      "name": "Na M Tu"
+    },
+    {
+      "code": "NAPHANA",
+      "name": "Na Phang"
+    },
+    {
+      "code": "NASANA",
+      "name": "Nanhsam-South"
+    },
+    {
+      "code": "NATAYA",
+      "name": "Naung Ta Yar"
+    },
+    {
+      "code": "NYAYANA",
+      "name": "Nyaung Shwe"
+    },
+    {
+      "code": "PALAHTA",
+      "name": "Pan Long"
+    },
+    {
+      "code": "PALANA",
+      "name": "Pang Long"
+    },
+    {
+      "code": "PALATA",
+      "name": "Pin Laung"
+    },
+    {
+      "code": "PAPAKA",
+      "name": "Pon Par Kyin"
+    },
+    {
+      "code": "PASANA",
+      "name": "Pansan-Pankham"
+    },
+    {
+      "code": "PASATA",
+      "name": "Pansai(Kyu Kute)"
+    },
+    {
+      "code": "PATAYA",
+      "name": "Pin Da Ya"
+    },
+    {
+      "code": "PAWANA",
+      "name": "Pan Wine"
+    },
+    {
+      "code": "PAYANA",
+      "name": "Panyan"
+    },
+    {
+      "code": "PHAKHANA",
+      "name": "Phe Kon"
+    },
+    {
+      "code": "SASANA",
+      "name": "Hsi Hseng"
+    },
+    {
+      "code": "TAKANA",
+      "name": "Taunggyi"
+    },
+    {
+      "code": "TAKHALA",
+      "name": "Ta Chi Leik"
+    },
+    {
+      "code": "TALANA",
+      "name": "Ta Lay"
+    },
+    {
+      "code": "TAMANYA",
+      "name": "Ta Moe Nye"
+    },
+    {
+      "code": "TATANA",
+      "name": "Tone Tar"
+    },
+    {
+      "code": "TAYANA",
+      "name": "Tantyan"
+    },
+    {
+      "code": "THANANA",
+      "name": "Thein Ni"
+    },
+    {
+      "code": "THAPANA",
+      "name": "Hsi Paw"
+    },
+    {
+      "code": "YANGANA",
+      "name": "Ywarngan"
+    },
+    {
+      "code": "YANYANA",
+      "name": "Shwe Nyaung"
+    },
+    {
+      "code": "YASANA",
+      "name": "Yat Sauk"
+    }
+  ],
+  "14": [
+    {
+      "code": "AHGAPA",
+      "name": "In Ga Pu"
+    },
+    {
+      "code": "AHMANA",
+      "name": "Ein Me"
+    },
+    {
+      "code": "AHMATA",
+      "name": "Ahmar"
+    },
+    {
+      "code": "BAKALA",
+      "name": "Bo Ga Le"
+    },
+    {
+      "code": "DADAYA",
+      "name": "Day Da Ye"
+    },
+    {
+      "code": "DANAPHA",
+      "name": "Da Nu Byu"
+    },
+    {
+      "code": "HAKAKA",
+      "name": "Haing Gyi Kyun"
+    },
+    {
+      "code": "HATHATA",
+      "name": "Hin Tha Da"
+    },
+    {
+      "code": "KAKAHTA",
+      "name": "Kan Gyi Daunt"
+    },
+    {
+      "code": "KAKANA",
+      "name": "Kyaun Gon"
+    },
+    {
+      "code": "KAKHANA",
+      "name": "Kyangin"
+    },
+    {
+      "code": "KALANA",
+      "name": "Kyaik Latt"
+    },
+    {
+      "code": "KAPANA",
+      "name": "Kyon Pyaw"
+    },
+    {
+      "code": "LAMANA",
+      "name": "Lay Myeth Na"
+    },
+    {
+      "code": "LAPATA",
+      "name": "La But Ta"
+    },
+    {
+      "code": "MAAHNA",
+      "name": "Myan Aung"
+    },
+    {
+      "code": "MAAHPA",
+      "name": "Ma U Bin"
+    },
+    {
+      "code": "MAMAKA",
+      "name": "Mawlamyinegyun"
+    },
+    {
+      "code": "MAMANA",
+      "name": "Myaungmya"
+    },
+    {
+      "code": "NGAPATA",
+      "name": "Nga Pu Taw"
+    },
+    {
+      "code": "NGASANA",
+      "name": "Ngwe Hsaung"
+    },
+    {
+      "code": "NGATHAKHA",
+      "name": "Nga Thaing Chaung"
+    },
+    {
+      "code": "NGAYAKA",
+      "name": "Ngayokaung"
+    },
+    {
+      "code": "NYATANA",
+      "name": "Nyaung Don"
+    },
+    {
+      "code": "PASALA",
+      "name": "Pyin Sa Lu"
+    },
+    {
+      "code": "PATANA",
+      "name": "Pan Ta Naw"
+    },
+    {
+      "code": "PATHAAH",
+      "name": "Pa Thein (West)"
+    },
+    {
+      "code": "PATHANA",
+      "name": "Pathein (West)"
+    },
+    {
+      "code": "PATHAYA",
+      "name": "Pathein-East"
+    },
+    {
+      "code": "PHAPANA",
+      "name": "Phya Pon"
+    },
+    {
+      "code": "THAPANA",
+      "name": "Tha Paung"
+    },
+    {
+      "code": "WAKHAMA",
+      "name": "Wa Ke Ma"
+    },
+    {
+      "code": "YAKANA",
+      "name": "Ye Kyi"
+    },
+    {
+      "code": "YATHAYA",
+      "name": "Shwe Thaung Yan"
+    },
+    {
+      "code": "ZALANA",
+      "name": "Za Lun"
+    }
+  ]
+}

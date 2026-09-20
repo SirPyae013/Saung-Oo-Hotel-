@@ -48,7 +48,7 @@ export default function RoomDetailPage() {
             </span>
             <span>
               <Users />
-              Up to {room.guests} guests
+              Up to {room.guests} adults + 1 child
             </span>
           </div>
           <h3>The little things, taken care of.</h3>
