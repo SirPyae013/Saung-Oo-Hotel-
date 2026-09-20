@@ -313,9 +313,7 @@ export default function BookingPage() {
                     onChange={(event) => setGuest({ ...guest, phone: event.target.value })}
                     placeholder="+959123456789"
                   />
-                  <span className="optional">
-                    Include the country code, such as +95 for Myanmar.
-                  </span>
+               
                 </label>
                 <fieldset className="full-width nrc-fields">
                   <legend>Myanmar NRC (required)</legend>
@@ -390,9 +388,7 @@ export default function BookingPage() {
                       />
                     </label>
                   </div>
-                  <p className="optional">
-                    Enter the details from your card in English. Example: 8/PAKHAKA(N)123456.
-                  </p>
+               
                   <p aria-live="polite">
                     NRC: {guest.nrcRegion || '…'}/{guest.nrcTownship || '…'}({guest.nrcType || '…'})
                     {guest.nrcSerial || '…'}
